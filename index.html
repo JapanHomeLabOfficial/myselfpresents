@@ -1,4 +1,121 @@
 <!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Life with Moka</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  background: #fffaf7;
+  color: #333;
+}
+
+/* 共通 */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* ヒーロー */
+.hero {
+  background: linear-gradient(180deg, #fceae8, #fffaf7);
+}
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+.hero p {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+/* ショート動画 */
+.shorts-wrap {
+  max-width: 360px;
+  aspect-ratio: 9 / 16;
+  margin: 40px auto;
+}
+.shorts-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+/* フェードアニメーション */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* カード */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="section hero fade">
+  <h1>Life with Moka</h1>
+  <p>Daily moments / Simple life / Short videos</p>
+</section>
+
+<!-- SHORTS -->
+<section class="section fade">
+  <div class="shorts-wrap">
+    <iframe 
+      src="https://www.youtube.com/embed/VIDEO_ID"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="section fade">
+  <div class="cards">
+    <div class="card">Daily Life</div>
+    <div class="card">Short Vlogs</div>
+    <div class="card">Minimal Style</div>
+  </div>
+</section>
+
+<script>
+const fades = document.querySelectorAll('.fade');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+fades.forEach(f => observer.observe(f));
+</script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
