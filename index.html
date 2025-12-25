@@ -186,4 +186,91 @@ src="https://www.youtube.com/embed/VQ23iGFw7UE?feature=share"
     allowfullscreen>
   </iframe>
 </div>
+  <!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>My Shorts Gallery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+}
+
+/* ヘッダー */
+header {
+  text-align: center;
+  padding: 30px 15px;
+}
+header h1 {
+  margin: 0;
+}
+header p {
+  color: #666;
+}
+
+/* Shorts グリッド */
+.shorts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+
+/* 縦動画比率 */
+.short {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* iframeをぴったり */
+.short iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>My Shorts</h1>
+  <p>YouTube Shorts Collection</p>
+</header>
+
+<section class="shorts-grid">
+  <div class="short">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1"></iframe>
+  </div>
+  <div class="short">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2"></iframe>
+  </div>
+  <div class="short">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3"></iframe>
+  </div>
+</section>
+
+<footer>
+  © 2025 My Shorts Site
+</footer>
+
+</body>
+</html>
+
 
