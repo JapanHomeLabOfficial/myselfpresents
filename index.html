@@ -1,390 +1,61 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<title>JapanHomeLab</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-body {
-  margin: 0;
-  font-family: "Helvetica Neue", sans-serif;
-  background: #fffaf7;
-  color: #333;
-}
-
-/* 共通 */
-.section {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-/* ヒーロー */
-.hero {
-  background: linear-gradient(180deg, #fceae8, #fffaf7);
-}
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-.hero p {
-  font-size: 18px;
-  opacity: 0.8;
-}
-
-/* ショート動画 */
-.shorts-wrap {
-  max-width: 360px;
-  aspect-ratio: 9 / 16;
-  margin: 40px auto;
-}
-.shorts-wrap iframe {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-}
-
-/* フェードアニメーション */
-.fade {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 1s ease;
-}
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* カード */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  max-width: 900px;
-  margin: auto;
-}
-.card {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-</style>
-</head>
-
-<body>
+  <nav class="nav" aria-label="Main navigation">
+    <a class="cta" href="shorts.html">Shorts <span class="arrow">→</span></a>
+    <a class="cta" href="about.html">About <span class="arrow">→</span></a>
+    <a class="cta" href="contact.html">Contact <span class="arrow">→</span></a>
+  </nav>
+</header>
 
 <!-- HERO -->
-<section class="section hero fade">
-  <h1>JapanHomeLab</h1>
-  <p>Daily moments / Simple life / Short videos</p>
-</section>
+<section class="hero fade" aria-labelledby="hero-title">
+  <div class="hero-grid">
+    <div class="icon" aria-hidden="true">
+      <!-- mug icon -->
+      <svg viewBox="0 0 64 64" width="56" height="56" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="mug">
+        <rect x="8" y="18" width="40" height="28" rx="4" fill="#fff" stroke="#7a4f3a" stroke-width="2"/>
+        <path d="M48 22c4 0 6 3 6 6s-2 6-6 6" stroke="#7a4f3a" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
 
-<!-- SHORTS -->
-<section class="section fade">
-  <div class="shorts-wrap">
-    <iframe 
-      src="https://www.youtube.com/embed/VIDEO_ID"
-      allowfullscreen>
-    </iframe>
+    <div>
+      <h2 id="hero-title">Daily moments — Simple life</h2>
+      <p>短い動画と試作記録をゆっくり見ていってください</p>
+
+      <div class="ctas" role="navigation" aria-label="Quick links">
+        <a class="cta" href="shorts.html">Watch Shorts <span class="arrow">→</span></a>
+        <a class="cta" href="about.html">Read About <span class="arrow">→</span></a>
+        <a class="cta" href="contact.html">Get in Touch <span class="arrow">→</span></a>
+      </div>
+    </div>
   </div>
+
+  <p style="margin-top:12px;color:var(--muted);font-size:13px;text-align:center">クリック／タップで各ページへ移動します。スクロールで表示されるコンテンツに動きがあります。</p>
 </section>
 
-<!-- INFO -->
-<section class="section fade">
+<!-- CARDS -->
+<section class="fade" aria-label="Sections">
   <div class="cards">
-    <div class="card">Daily Life</div>
-    <div class="card">Short Vlogs</div>
-    <div class="card">Minimal Style</div>
+    <a class="card" href="shorts.html" aria-label="Short videos">
+      <h3>Shorts</h3>
+      <p>短い日常動画のギャラリー（縦型ショート向け）。</p>
+    </a>
+
+    <a class="card" href="about.html" aria-label="About JapanHomeLab">
+      <h3>About</h3>
+      <p>このサイトと試作プロジェクトの考え方について。</p>
+    </a>
+
+    <a class="card" href="contact.html" aria-label="Contact">
+      <h3>Contact</h3>
+      <p>依頼・コラボ・質問はこちらから。</p>
+    </a>
+  </div>
+
+  <!-- embedded short example -->
+  <div class="shorts" style="margin-top:20px;">
+    <iframe src="https://www.youtube.com/embed/VQ23iGFw7UE?feature=share" title="YouTube Short" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </section>
 
-<script>
-const fades = document.querySelectorAll('.fade');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
-});
-fades.forEach(f => observer.observe(f));
-</script>
-
-</body>
-</html>
-
-<!-- 以下は元ファイルに含まれていた重複コンテンツ（編集不要なら削除可能） -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>My First Website</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-  <h1>Hello World!</h1>
-  <p>This is my GitHub Pages website.</p>
-</body>
-</html>
-<a href="contact.html">Contact</a> |
-<a href="privacy.html">Privacy Policy</a>
-<a href="contact.html">Contact</a> |
-<a href="privacy.html">Privacy Policy</a>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-
-<h1>Welcome to My Website</h1>
-
-<p>
-This website provides useful information, tutorials, and insights
-related to technology, tools, and practical solutions for everyday problems.
-</p>
-
-<p>
-Our goal is to share clear and easy-to-understand content
-that helps users learn new skills and make better decisions.
-</p>
-
-<p>
-All content is created for informational purposes and is continuously updated
-to ensure accuracy and usefulness.
-</p>
-
-<hr>
-
-<p>
-<a href="privacy.html">Privacy Policy</a> |
-<a href="contact.html">Contact</a>
-</p>
-
-</body>
-</html>
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/動画ID"
-title="YouTube video"
-allowfullscreen>
-</iframe>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>My Tech & DIY Lab</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    header {
-      background: #111;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .bg-light {
-      background: #f5f5f5;
-    }
-
-    .bg-dark {
-      background: #222;
-      color: white;
-    }
-
-    img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-
-    .video {
-      position: relative;
-      padding-top: 56.25%;
-      margin-top: 30px;
-    }
-
-    .video iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    footer {
-      background: #111;
-      color: #aaa;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
-
-    a {
-      color: #4da3ff;
-      text-decoration: none;
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <h1>My Tech & DIY Lab</h1>
-  <p>Mechanism, Sound, and Creative Engineering</p>
-</header>
-
-<section>
-  <h2>About This Site</h2>
-  <p>
-    This website shares experiments, mechanisms, sound systems,
-    and behind-the-scenes engineering projects.
-  </p>
-
-  <img src="sample.jpg" alt="project image">
-</section>
-
-<section class="bg-light">
-  <h2>YouTube Videos</h2>
-  <p>
-    I also publish videos on YouTube.
-    Here is one of my latest uploads.
-  </p>
-
-  <div class="video">
-    <iframe 
-      src="https://www.youtube.com/embed/VIDEO_ID"
-      frameborder="0"
-      allowfullscreen>
-    </iframe>
-  </div>
-</section>
-
-<section class="bg-dark">
-  <h2>Why I Share This</h2>
-  <p>
-    I believe sharing real-world experiments and failures
-    helps creators around the world build better projects.
-  </p>
-</section>
-
-<footer>
-  <p>
-    © 2025 My Tech Lab |
-    <a href="privacy.html">Privacy Policy</a> |
-    <a href="contact.html">Contact</a>
-  </p>
-<
-</body>
-</html>
-src="https://www.youtube.com/embed/VQ23iGFw7UE?feature=share"
-<div class="shorts-container">
-  <iframe
-    src="https://www.youtube.com/embed/VQ23iGFw7UE?feature=share"
-    title="YouTube Shorts"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
-</div>
-  <!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<title>My Shorts Gallery</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fafafa;
-}
-
-/* ヘッダー */
-header {
-  text-align: center;
-  padding: 30px 15px;
-}
-header h1 {
-  margin: 0;
-}
-header p {
-  color: #666;
-}
-
-/* Shorts グリッド */
-.shorts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
-  padding: 20px;
-}
-
-/* 縦動画比率 */
-.short {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  background: #000;
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-/* iframeをぴったり */
-.short iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* フッター */
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  color: #777;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-  <h1>My Shorts</h1>
-  <p>YouTube Shorts Collection</p>
-</header>
-
-<section class="shorts-grid">
-  <div class="short">
-    <iframe src="https://www.youtube.com/embed/VQ23iGFw7UE"></iframe>
-  </div>
-  <div class="short">
-    <iframe src="https://www.youtube.com/embed/s-PIxNNfZ2o"></iframe>
-  </div>
-  <div class="short">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3"></iframe>
-  </div>
-</section>
-
-<footer>
-  © 2025 JapanHomeLab Official Site
+<footer class="fade">
+  <p>© 2025 JapanHomeLab — <a href="privacy.html">Privacy</a> | <a href="contact.html">Contact</a></p>
 </footer>
-
-</body>
-</html>
