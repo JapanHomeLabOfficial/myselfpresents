@@ -1,98 +1,69 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>Japan Home Lab</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Video Library | Japan Home Lab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Google AdSense -->
-  <script async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1446621653651531"
-    crossorigin="anonymous"></script>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  color: #333;
+}
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      background: #fffaf7;
-      color: #333;
-    }
+nav {
+  background: #111;
+  padding: 12px 20px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
 
-    nav {
-      padding: 12px 20px;
-      background: #111;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-    }
+header {
+  text-align: center;
+  padding: 40px 20px;
+}
+header h1 {
+  margin: 0;
+}
+header p {
+  color: #666;
+}
 
-    .section {
-      padding: 80px 20px;
-      text-align: center;
-    }
+/* ライブラリー */
+.library {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
 
-    .hero {
-      background: linear-gradient(180deg, #fceae8, #fffaf7);
-    }
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 18px;
-      opacity: 0.8;
-    }
+.video {
+  aspect-ratio: 9 / 16;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+}
 
-    .fade {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 1s ease;
-    }
-    .fade.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 
-    .shorts-wrap {
-      max-width: 360px;
-      aspect-ratio: 9 / 16;
-      margin: 40px auto;
-    }
-    .shorts-wrap iframe {
-      width: 100%;
-      height: 100%;
-      border-radius: 20px;
-      border: none;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    }
-
-    footer {
-      background: #111;
-      color: #aaa;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
-    footer a {
-      color: #4da3ff;
-      text-decoration: none;
-    }
-  </style>
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #777;
+}
+</style>
 </head>
 
 <body>
@@ -101,45 +72,31 @@
   <a href="/">← Home</a>
 </nav>
 
-<section class="section hero fade">
-  <h1>Japan Home Lab</h1>
-  <p>Technology / DIY / Audio / Mechanism</p>
-</section>
+<header>
+  <h1>Video Library</h1>
+  <p>Japan Home Lab – Shorts & Experiments</p>
+</header>
 
-<section class="section fade">
-  <div class="shorts-wrap">
-    <iframe
-      src="https://www.youtube.com/embed/VQ23iGFw7UE"
-      allowfullscreen>
-    </iframe>
-  </div>
-</section>
+<section class="library">
 
-<section class="section fade">
-  <div class="cards">
-    <div class="card">Daily Life</div>
-    <div class="card">Short Vlogs</div>
-    <div class="card">Minimal Tech</div>
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/VQ23iGFw7UE"></iframe>
   </div>
+
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/s-PIxNNfZ2o"></iframe>
+  </div>
+
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/eGnySFDVwFw"></iframe>
+  </div>
+
+  <!-- 追加はここにコピペ -->
 </section>
 
 <footer>
-  © 2025 JapanHomeLab Official Site<br>
-  <a href="privacy.html">Privacy Policy</a> |
-  <a href="contact.html">Contact</a>
+  © 2025 JapanHomeLab
 </footer>
-
-<script>
-  const fades = document.querySelectorAll('.fade');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  });
-  fades.forEach(f => observer.observe(f));
-</script>
 
 </body>
 </html>
